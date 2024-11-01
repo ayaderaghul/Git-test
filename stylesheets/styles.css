@@ -1,0 +1,53 @@
+
+body{
+font-family: "Roboto", sans-serif;
+}
+nav {
+	background-color: #1f2937;
+	color: white;
+	padding:1px;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+}
+
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.logo {
+padding: 0 5px 0 15px;
+}
+
+.menu {
+padding: 25px;
+}
+
+section {
+display:flex;
+flex-direction: column-reverse;
+}
+.hero {
+background-color: #1f2937;
+color: white;
+}
+.hero-text{
+margin:0px 50px 50px;
+}
+.roboto-black {
+  font-family: "Roboto", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.hero-image {
+background-color: gray;
+color: white;
+margin: 50px;
+padding:50px;
+text-align:center;
+}
+
