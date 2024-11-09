@@ -1,18 +1,12 @@
 let humanPoint =0;
 let computerPoint =0;
 
+const points = document.querySelector("#points");
+const whoWon = document.querySelector("#whoWon");
 
-function playGame(){
-for (let i=0;i<5;i++){
+function playRound(humanChoice) {
+const computerChoice = getComputerChoice();
 
-const humanSelection = prompt("enter R, P or S:");
-const computerSelection = getComputerChoice();
-playRound(humanSelection, computerSelection);
-alert(`${humanSelection} - ${computerSelection}. Your point: ${humanPoint}`);
-
-}}
-
-function playRound(humanChoice, computerChoice) {
 if (humanChoice === "R" && computerChoice === "P") {
 computerPoint++;
 }
@@ -32,8 +26,17 @@ else if (humanChoice === "S" && computerChoice === "P") {
 humanPoint++;
 }
 else if (humanChoice === computerChoice){
-
 }
+
+points.innerText = `${humanPoint}`;
+
+if (humanPoint === 5) {
+whoWon.innerText="You won!";
+
+} else if (computerPoint ===5) {
+whoWon.innerText = "Computer won!";
+}
+
 };
 
 
@@ -50,11 +53,3 @@ return "S";
 };
 
 
-playGame();
-if (humanPoint > computerPoint){
-alert("You won!");
-} else if(humanPoint < computerPoint){
-alert("Computer won!");
-} else {
-alert("Draw");
-}
