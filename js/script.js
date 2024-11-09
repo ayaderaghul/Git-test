@@ -1,30 +1,42 @@
+let humanPoint =0;
+let computerPoint =0;
 
+
+function playGame(){
+for (let i=0;i<5;i++){
+
+const humanSelection = prompt("enter R, P or S:");
+const computerSelection = getComputerChoice();
+playRound(humanSelection, computerSelection);
+alert(`${humanSelection} - ${computerSelection}. Your point: ${humanPoint}`);
+
+}}
 
 function playRound(humanChoice, computerChoice) {
 if (humanChoice === "R" && computerChoice === "P") {
-alert("Computer won!");
+computerPoint++;
 }
-if (humanChoice === "R" && computerChoice === "S") {
-alert("You won!");
+else if (humanChoice === "R" && computerChoice === "S") {
+humanPoint++;
 }
-if (humanChoice === "P" && computerChoice === "S") {
-alert("Computer won!");
+else if (humanChoice === "P" && computerChoice === "S") {
+computerPoint++;
 }
-if (humanChoice === "P" && computerChoice === "R") {
-alert("You won!");
+else if (humanChoice === "P" && computerChoice === "R") {
+humanPoint++;
 }
-if (humanChoice === "S" && computerChoice === "R") {
-alert("Computer won!");
+else if (humanChoice === "S" && computerChoice === "R") {
+computerPoint++;
 }
-if (humanChoice === "S" && computerChoice === "P") {
-alert("You won!");
+else if (humanChoice === "S" && computerChoice === "P") {
+humanPoint++;
 }
-if (humanChoice === computerChoice){
-alert("Draw");
+else if (humanChoice === computerChoice){
+
 }
 };
 
-const humanSelection = prompt("enter R, P or S:");
+
 
 function getComputerChoice(){
 const r = Math.random();
@@ -37,5 +49,12 @@ return "S";
 }
 };
 
-const computerSelection = getComputerChoice();
-playRound(humanSelection, computerSelection);
+
+playGame();
+if (humanPoint > computerPoint){
+alert("You won!");
+} else if(humanPoint < computerPoint){
+alert("Computer won!");
+} else {
+alert("Draw");
+}
