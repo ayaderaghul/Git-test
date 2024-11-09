@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       if (value === '=') {
         if (operator && previousInput !== '') {
-          currentInput = eval(`${previousInput}${operator}${currentInput}`);
+          currentInput = operate(previousInput, currentInput, operator);
           display.textContent = currentInput;
           operator = null;
           previousInput = '';
@@ -38,4 +38,21 @@ document.addEventListener('DOMContentLoaded', function() {
       display.textContent = currentInput;
     });
   });
+
+  function operate(a, b, operator) {
+    const num1 = parseFloat(a);
+    const num2 = parseFloat(b);
+    switch (operator) {
+      case '+':
+        return (num1 + num2).toString();
+      case '-':
+        return (num1 - num2).toString();
+      case '*':
+        return (num1 * num2).toString();
+      case '/':
+        return (num1 / num2).toString();
+      default:
+        return '';
+    }
+  }
 });
